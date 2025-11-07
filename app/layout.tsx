@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { siteConfig } from "@/lib/seo-config";
 import { Header } from "@/components/layout/header";
@@ -88,7 +89,10 @@ export default function RootLayout({
       >
         <Header />
         <main className="min-h-screen">{children}</main>
-        <Footer />
+        {/* CACHE COMPONENTS: Wrap dynamic Footer in Suspense to avoid blocking the page */}
+        <Suspense fallback={<div className="h-64" />}>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );

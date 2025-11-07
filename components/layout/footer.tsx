@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { Heart } from "lucide-react";
+import { connection } from "next/server";
 
-export function Footer() {
+export async function Footer() {
+  // CACHE COMPONENTS: Access connection() before using new Date()
+  // This ensures the component is properly dynamic and the year is always current
+  await connection();
   const currentYear = new Date().getFullYear();
 
   return (
