@@ -1,0 +1,38 @@
+{
+  "name": "FormatTools - Free Online Formatters & Converters",
+  "short_name": "FormatTools",
+  "description": "Free online formatters and converters for developers. JSON formatter, CSV converter, HTML beautifier and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["developer tools", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "JSON Formatter",
+      "short_name": "JSON",
+      "description": "Format and validate JSON",
+      "url": "/tools/json-formatter"
+    },
+    {
+      "name": "CSV to JSON",
+      "short_name": "CSV",
+      "description": "Convert CSV to JSON",
+      "url": "/tools/csv-to-json"
+    },
+    {
+      "name": "HTML Beautifier",
+      "short_name": "HTML",
+      "description": "Format HTML code",
+      "url": "/tools/html-beautifier"
+    }
+  ]
+}
