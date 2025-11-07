@@ -73,8 +73,8 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="shadow-lg" asChild>
-                <a href="#tools">
+              <Button size="lg" className="shadow-lg flex" asChild>
+                <a href="#tools" className="flex items-center">
                   Browse All Tools
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </a>
