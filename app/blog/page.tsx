@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog - Developer Tools Tips & Guides",
@@ -87,116 +87,164 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Developer Tools Blog
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-          Tips, tutorials, and best practices for using online developer tools
-          effectively
-        </p>
-      </div>
-
-      {/* Featured Post */}
-      <Card className="mb-12 border-2 border-blue-500">
-        <CardContent className="p-8">
-          <div className="flex items-center gap-2 text-sm text-blue-500 font-semibold mb-3">
-            <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-              Featured
-            </span>
-            <span>{blogPosts[0].category}</span>
-          </div>
-          <h2 className="text-3xl font-bold mb-4">{blogPosts[0].title}</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-            {blogPosts[0].excerpt}
-          </p>
-          <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <div className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              <span>{blogPosts[0].date}</span>
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative w-full py-16 md:py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-blue-100 dark:border-blue-900/50 shadow-soft">
+              <Tag className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Developer Blog
+              </span>
             </div>
-            <div className="flex items-center gap-1">
-              <Clock className="h-4 w-4" />
-              <span>{blogPosts[0].readTime}</span>
-            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+              Tips, Tutorials &
+              <span className="block gradient-text mt-2">Best Practices</span>
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Learn how to use developer tools effectively and level up your
+              workflow
+            </p>
           </div>
-          <Link
-            href={`/blog/${blogPosts[0].slug}`}
-            className="inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3 transition-all"
-          >
-            Read Full Article
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </CardContent>
-      </Card>
-
-      {/* Blog Posts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPosts.slice(1).map((post) => (
-          <Card
-            key={post.id}
-            className="hover:shadow-lg transition-all hover:-translate-y-1"
-          >
-            <CardHeader>
-              <div className="text-sm text-blue-500 font-semibold mb-2">
-                {post.category}
-              </div>
-              <CardTitle className="text-xl">{post.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-500 mb-4">
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-3 w-3" />
-                  <span>{post.date}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  <span>{post.readTime}</span>
-                </div>
-              </div>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3 transition-all text-sm"
-              >
-                Read More
-                <ArrowRight className="h-3 w-3" />
-              </Link>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Categories */}
-      <div className="mt-12 p-8 bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">
-          Browse by Category
-        </h2>
-        <div className="flex flex-wrap justify-center gap-3">
-          {[
-            "Tutorial",
-            "Design",
-            "Data",
-            "Web Development",
-            "Performance",
-            "Best Practices",
-          ].map((category) => (
-            <Link
-              key={category}
-              href={`/blog/category/${category
-                .toLowerCase()
-                .replace(" ", "-")}`}
-              className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
-            >
-              {category}
-            </Link>
-          ))}
         </div>
-      </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="w-full py-16 md:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          {/* Featured Post */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Featured Article
+            </h2>
+            <div className="group relative">
+              <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition duration-500" />
+              <Card className="relative modern-card rounded-2xl border-0">
+                <CardContent className="p-8 md:p-10">
+                  <div className="flex items-center gap-2 text-sm mb-4">
+                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-950/50 text-blue-700 dark:text-cyan-400 rounded-full font-medium">
+                      Featured
+                    </span>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      {blogPosts[0].category}
+                    </span>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+                    {blogPosts[0].title}
+                  </h3>
+                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    {blogPosts[0].excerpt}
+                  </p>
+                  <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-500 mb-6">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      <span>
+                        {new Date(blogPosts[0].date).toLocaleDateString(
+                          "en-US",
+                          { month: "short", day: "numeric", year: "numeric" }
+                        )}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
+                      <span>{blogPosts[0].readTime}</span>
+                    </div>
+                  </div>
+                  <Link
+                    href={`/blog/${blogPosts[0].slug}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl font-semibold shadow-soft hover:shadow-medium transition-all duration-300"
+                  >
+                    Read Full Article
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* All Posts */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Recent Articles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {blogPosts.slice(1).map((post, index) => (
+                <div
+                  key={post.id}
+                  className="group animate-fade-in-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <Card className="h-full modern-card rounded-2xl border-0 hover-lift">
+                    <CardHeader>
+                      <div className="text-sm text-blue-600 dark:text-cyan-400 font-semibold mb-3">
+                        {post.category}
+                      </div>
+                      <CardTitle className="text-xl group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+                        {post.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500 mb-4">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span>
+                            {new Date(post.date).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                            })}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          <span>{post.readTime}</span>
+                        </div>
+                      </div>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="inline-flex items-center gap-2 text-blue-600 dark:text-cyan-400 font-semibold hover:gap-3 transition-all text-sm"
+                      >
+                        Read More
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Categories Section */}
+          <div className="modern-card rounded-2xl p-8 md:p-10">
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+              Browse by Category
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "Tutorial",
+                "Design",
+                "Data",
+                "Web Development",
+                "Performance",
+                "Best Practices",
+              ].map((category) => (
+                <Link
+                  key={category}
+                  href={`/blog/category/${category
+                    .toLowerCase()
+                    .replace(" ", "-")}`}
+                  className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-cyan-500 transition-all duration-300 text-sm font-medium"
+                >
+                  {category}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

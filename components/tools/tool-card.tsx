@@ -39,24 +39,44 @@ export function ToolCard({ tool }: ToolCardProps) {
   const Icon = iconMap[tool.icon] || Code;
 
   return (
-    <Card className="group hover:shadow-lg hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1">
-      <CardHeader>
-        <div className="w-12 h-12 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center mb-3 group-hover:bg-blue-500 transition-colors">
-          <Icon className="h-6 w-6 text-blue-500 group-hover:text-white transition-colors" />
-        </div>
-        <CardTitle className="text-xl">{tool.name}</CardTitle>
-        <CardDescription className="text-sm leading-relaxed">
-          {tool.description}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Link href={tool.path}>
-          <Button className="w-full group-hover:bg-blue-600" size="sm">
-            Open Tool
-            <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </Link>
-      </CardContent>
-    </Card>
+    <div className="group relative h-full">
+      {/* Gradient border glow on hover */}
+      <div className="absolute -inset-px bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition duration-500" />
+
+      {/* Card */}
+      <Card className="relative h-full modern-card rounded-2xl border-0 hover-lift">
+        <CardHeader className="space-y-4">
+          {/* Icon with gradient */}
+          <div className="relative">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-soft group-hover:shadow-medium transition-all duration-300">
+              <Icon className="h-6 w-6 text-white" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <CardTitle className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
+              {tool.name}
+            </CardTitle>
+            <CardDescription className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              {tool.description}
+            </CardDescription>
+          </div>
+        </CardHeader>
+
+        <CardContent>
+          <Link href={tool.path}>
+            <Button
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-soft hover:shadow-medium transition-all duration-300"
+              size="default"
+            >
+              <span className="flex items-center justify-center w-full">
+                Open Tool
+                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
+          </Link>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

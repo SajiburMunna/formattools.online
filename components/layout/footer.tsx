@@ -9,16 +9,18 @@ export async function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mt-20">
+    <footer className="w-full border-t border-gray-200/50 dark:border-gray-800/50 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center shadow-soft">
                 <span className="text-white font-bold">FT</span>
               </div>
-              <span className="font-bold text-lg">FormatTools</span>
+              <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                FormatTools
+              </span>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Free online formatters and converters for developers. Beautify,
@@ -33,7 +35,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/tools/json-formatter"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   JSON Formatter
                 </Link>
@@ -41,7 +43,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/tools/csv-to-json"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   CSV to JSON
                 </Link>
@@ -49,7 +51,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/tools/html-beautifier"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   HTML Beautifier
                 </Link>
@@ -57,7 +59,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/tools/color-converter"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Color Converter
                 </Link>
@@ -72,7 +74,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Blog
                 </Link>
@@ -80,7 +82,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   About Us
                 </Link>
@@ -88,7 +90,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/api"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   API
                 </Link>
@@ -96,7 +98,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Contact
                 </Link>
@@ -111,7 +113,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -119,7 +121,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -127,7 +129,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/cookies"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Cookie Policy
                 </Link>
@@ -135,7 +137,7 @@ export async function Footer() {
               <li>
                 <Link
                   href="/disclaimer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                 >
                   Disclaimer
                 </Link>
