@@ -23,6 +23,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Blog posts
+  const blogPosts: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog/json-formatter-guide`,
+      lastModified: new Date("2025-01-15"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/css-gradients-guide`,
+      lastModified: new Date("2025-01-10"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/color-theory-developers`,
+      lastModified: new Date("2025-01-05"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -51,5 +73,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...routes, ...toolRoutes, ...staticPages];
+  return [...routes, ...toolRoutes, ...blogPosts, ...staticPages];
 }
