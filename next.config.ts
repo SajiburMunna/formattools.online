@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable Cache Components (Next.js 16+)
-  // This enables explicit opt-in caching with "use cache" directive
-  // Routes are dynamic by default, opt into caching for better performance
-  cacheComponents: true,
   output: "export",
+
+  trailingSlash: true,
+
+  images: {
+    unoptimized: true,
+    domains: ["avatars.githubusercontent.com", "raw.githubusercontent.com"],
+  },
 };
 
 export default nextConfig;
