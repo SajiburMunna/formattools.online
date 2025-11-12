@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // This enables explicit opt-in caching with "use cache" directive
   // Routes are dynamic by default, opt into caching for better performance
   cacheComponents: true,
+  output: "export",
 };
 
 export default nextConfig;

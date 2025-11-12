@@ -1,0 +1,16 @@
+name = "formattools-online"
+compatibility_date = "2025-11-12"
+
+# By default this project builds to Next's .next folder. Wrangler needs either
+# a Worker entrypoint (main) or a static assets directory to deploy.
+#
+# This configuration assumes you will export a static site into `out/` (via
+# `next build && next export`) and deploy that directory. If your build output
+# is different, update `site.bucket` below or change your deploy command to
+# pass the `--assets` flag.
+
+type = "javascript"
+
+[site]
+bucket = "./out"
+entry-point = "workers-site"
