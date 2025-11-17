@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Free Online Formatters & Converters for Developers",
   description:
     "Beautify, convert, and optimize your code or data instantly — all in your browser. JSON formatter, CSV converter, HTML beautifier, and more developer tools.",
-  url: "https://formattools.online",
+  url: "https://www.formattools.online",
   ogImage: "/og-image.png",
   keywords: [
     "formatter",
