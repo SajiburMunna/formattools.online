@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.author }],
   creator: siteConfig.creator,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -77,8 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Meta tags for faster Google indexing */}
-        <meta
+         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
@@ -89,7 +91,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50`}
       >
-        {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-R4CDZJ38RB"
           strategy="afterInteractive"
