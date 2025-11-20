@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/lib/seo-config";
 
 export const metadata: Metadata = {
   title: "Blog - Developer Tools Tips & Guides",
@@ -14,11 +15,21 @@ export const metadata: Metadata = {
     "web development tools",
     "programming tutorials",
   ],
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  },
   openGraph: {
     title: "FormatTools Blog - Developer Tips & Guides",
     description:
       "Tutorials and guides for using online developer tools effectively",
+    url: `${siteConfig.url}/blog`,
+    siteName: siteConfig.name,
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

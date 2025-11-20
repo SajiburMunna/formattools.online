@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { siteConfig } from "@/lib/seo-config";
 import { Code, Shield, Zap, Heart, Users, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -14,11 +15,21 @@ export const metadata: Metadata = {
     "json formatter",
     "online converter",
   ],
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
   openGraph: {
     title: "About FormatTools.online - Free Developer Tools",
     description:
       "Free online tools for developers. Format, convert, and optimize your code instantly.",
+    url: `${siteConfig.url}/about`,
+    siteName: siteConfig.name,
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

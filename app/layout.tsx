@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   creator: siteConfig.creator,
   metadataBase: new URL(siteConfig.url),
   alternates: {
-    canonical: "./",
+    canonical: siteConfig.url,
   },
   openGraph: {
     type: "website",
@@ -80,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-         <meta
+        <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
